@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: postgres:17
+    container_name: cloud-data-platform-db
+    environment:
+      POSTGRES_USER: clouduser
+      POSTGRES_PASSWORD: cloudpassword
+      POSTGRES_DB: cloud_data_platform
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
